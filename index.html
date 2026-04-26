@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andrei Constantin Burdușa — Purtătorul de semne</title>
-  <meta name="description" content="Poet, analist, filosof, om de radio. Timișoara. Toate universurile lui Andrei Constantin Burdușa.">
+  <meta name="description" content="Poet, analist, filosof, om de radio. Timișoara. Toate universurile lui Andrei Constantin Burdușa — poezie, geopolitică, filosofie, voce.">
   <meta property="og:title" content="Andrei Constantin Burdușa — Purtătorul de semne">
   <meta property="og:description" content="Poet, analist, filosof, om de radio. Toate universurile lui Andrei Constantin Burdușa.">
   <meta property="og:url" content="https://andreiburdusa.ro">
@@ -16,13 +16,13 @@
 
     :root {
       --ink:        #1a1410;
-      --parchment:  #ffffff;
-      --cream:      #ffffff;
-      --gold:       #f0c060;
-      --gold-light: #f8e090;
-      --amber:      #e8a060;
-      --sand:       #f0e0c0;
-      --muted:      #d0c0a0;
+      --parchment:  #f5f0e8;
+      --cream:      #faf7f2;
+      --gold:       #c9a96e;
+      --gold-light: #e8d5a3;
+      --amber:      #d4956a;
+      --sand:       #d4c5a9;
+      --muted:      #7a6f62;
       --dark-bg:    #1c1510;
       --dark-card:  #251e17;
     }
@@ -31,8 +31,9 @@
 
     body {
       font-family: 'EB Garamond', serif;
-      background: var(--dark-bg);
-      color: var(--parchment);
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
     }
 
     /* NAV */
@@ -40,7 +41,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(28, 21, 16, 0.95);
+      background: rgba(28, 21, 16, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(201, 169, 110, 0.2);
       padding: 0 2rem;
@@ -51,22 +52,19 @@
       height: 64px;
     }
     nav .nav-logo {
-      font-family: 'Cinzel', serif;
-      font-size: 0.85rem;
-      color: var(--gold);
-      letter-spacing: 0.15em;
-      text-decoration: none;
+      font-family: 'Cinzel', serif; font-size: 0.85rem;
+      color: var(--gold); letter-spacing: 0.15em; text-decoration: none;
     }
     nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
     nav ul li a {
       font-family: 'Cinzel', serif; font-size: 0.72rem;
-      letter-spacing: 0.12em; color: #ffffff;
+      letter-spacing: 0.12em; color: var(--sand);
       text-decoration: none; transition: color 0.3s;
     }
     nav ul li a:hover { color: var(--gold); }
 
     /* HERO */
-    .hero {
+    #poet {
       min-height: 100vh;
       background: var(--dark-bg);
       display: grid;
@@ -74,66 +72,50 @@
       align-items: center;
       padding-top: 64px;
     }
-
-    .hero-photo-wrap {
-      position: relative;
-      height: 100%;
-      min-height: 600px;
-      overflow: hidden;
+    .poet-photo-wrap {
+      position: relative; height: 100%; min-height: 600px; overflow: hidden;
     }
-    .hero-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      filter: contrast(1.05);
+    .poet-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      filter: sepia(15%) contrast(1.05);
     }
-    .hero-photo-wrap::after {
-      content: '';
-      position: absolute; inset: 0;
+    .poet-photo-wrap::after {
+      content: ''; position: absolute; inset: 0;
       background: linear-gradient(to right, transparent 60%, var(--dark-bg) 100%);
     }
-
-    .hero-text {
-      padding: 4rem 4rem 4rem 2rem;
-      color: var(--parchment);
-    }
-    .hero-text .eyebrow {
+    .poet-text { padding: 4rem 4rem 4rem 2rem; color: var(--parchment); }
+    .poet-text .eyebrow {
       font-family: 'Cinzel', serif; font-size: 0.7rem;
       letter-spacing: 0.3em; color: var(--gold);
-      margin-bottom: 1.5rem; display: block;
+      margin-bottom: 1.5rem; text-transform: uppercase; display: block;
     }
-    .hero-text h1 {
+    .poet-text h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.2rem, 4vw, 3.2rem);
-      font-weight: 300; line-height: 1.2;
-      margin-bottom: 0.5rem; color: var(--parchment);
+      font-weight: 300; line-height: 1.2; margin-bottom: 0.5rem;
+      color: var(--parchment);
     }
-    .hero-text .tagline {
+    .poet-text .tagline {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic; font-size: 1.3rem;
       color: var(--gold-light); margin-bottom: 2rem;
     }
-    .divider-gold {
-      width: 60px; height: 1px;
-      background: var(--gold); margin-bottom: 2rem;
-    }
-    .hero-text p {
+    .divider-gold { width: 60px; height: 1px; background: var(--gold); margin-bottom: 2rem; }
+    .poet-text p {
       font-size: 1.05rem; line-height: 1.85;
-      color: #e8e0d0; margin-bottom: 1.2rem;
+      color: rgba(245,240,232,0.82); margin-bottom: 1.2rem;
     }
-    .facets {
-      margin-top: 1.5rem;
-      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    .poet-links { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .poet-links a {
+      font-family: 'Cinzel', serif; font-size: 0.68rem;
+      letter-spacing: 0.12em; padding: 0.6rem 1.2rem;
+      border: 1px solid var(--gold); color: var(--gold);
+      text-decoration: none; transition: all 0.3s;
     }
-    .facet {
-      font-family: 'Cinzel', serif; font-size: 0.62rem;
-      letter-spacing: 0.15em; color: var(--muted);
-      border: 1px solid rgba(201,169,110,0.2);
-      padding: 0.4rem 0.9rem;
-    }
+    .poet-links a:hover { background: var(--gold); color: var(--dark-bg); }
 
-    /* UNIVERSURI */
+    /* SECTION COMMON */
     section { padding: 6rem 2rem; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
     .section-header { text-align: center; margin-bottom: 4rem; }
@@ -145,182 +127,197 @@
     .section-header h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 300; color: #ffffff; margin-bottom: 1rem;
+      font-weight: 300; color: var(--ink); margin-bottom: 1rem;
     }
-    .section-header .line {
-      width: 50px; height: 1px;
-      background: var(--gold); margin: 0 auto;
+    .section-header .line { width: 50px; height: 1px; background: var(--gold); margin: 0 auto; }
+
+    /* BUTTONS */
+    .btn-gold {
+      display: inline-block; font-family: 'Cinzel', serif;
+      font-size: 0.72rem; letter-spacing: 0.2em;
+      padding: 0.9rem 2rem; background: var(--gold);
+      color: var(--dark-bg); text-decoration: none; transition: all 0.3s;
     }
+    .btn-gold:hover { background: var(--amber); }
+    .btn-outline {
+      display: inline-block; font-family: 'Cinzel', serif;
+      font-size: 0.72rem; letter-spacing: 0.2em;
+      padding: 0.9rem 2rem; border: 1px solid var(--gold);
+      color: var(--gold); text-decoration: none; transition: all 0.3s;
+    }
+    .btn-outline:hover { background: var(--gold); color: var(--dark-bg); }
 
-    /* UNIVERSE CARDS */
-    #universuri { background: var(--dark-bg); }
+    /* UNIVERSURI — light bg cards */
+    #universuri { background: var(--parchment); }
 
-    .universe-card {
+    .univ-grid {
       display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 0;
-      border-bottom: 1px solid rgba(201,169,110,0.15);
-      text-decoration: none;
-      color: var(--parchment);
-      transition: background 0.3s;
-      padding: 2.5rem 0;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
     }
-    .universe-card:first-child { border-top: 1px solid rgba(201,169,110,0.15); }
-    .universe-card:hover { background: rgba(201,169,110,0.04); }
 
-    .universe-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 4rem; font-weight: 300;
-      color: rgba(240,192,96,0.3);
-      padding: 0 2rem;
-      display: flex; align-items: flex-start;
-      padding-top: 0.3rem;
-      transition: color 0.3s;
-    }
-    .universe-card:hover .universe-num { color: rgba(240,192,96,0.6); }
-
-    .universe-content { padding-right: 2rem; }
-    .universe-label {
-      font-family: 'Cinzel', serif; font-size: 0.62rem;
-      letter-spacing: 0.25em; color: #f0c060;
-      margin-bottom: 0.6rem; display: block;
-    }
-    .universe-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem; font-weight: 300; font-style: italic;
-      color: #fff; margin-bottom: 0.8rem; line-height: 1.2;
-    }
-    .universe-desc {
-      font-size: 1rem; color: #d8ccc0;
-      line-height: 1.75; margin-bottom: 1.2rem;
-    }
-    .universe-links {
-      display: flex; flex-wrap: wrap; gap: 0.5rem;
-      align-items: flex-start;
-    }
-    .universe-link {
-      font-family: 'Cinzel', serif; font-size: 0.6rem;
-      letter-spacing: 0.12em; color: #1c1510;
+    .univ-card {
+      background: white;
+      border: 1px solid var(--sand);
+      border-top: 3px solid var(--gold);
+      padding: 2.5rem;
       text-decoration: none;
-      border: 1px solid #f0c060;
-      padding: 0.45rem 1rem;
+      display: block;
       transition: all 0.3s;
-      background: #f0c060;
-      display: inline-block;
-      line-height: 1;
+      color: var(--ink);
     }
-    .universe-link:hover {
-      background: #ffffff; color: #1c1510;
-      border-color: #ffffff;
+    .univ-card:hover {
+      border-top-color: var(--amber);
+      box-shadow: 0 8px 32px rgba(26,20,16,0.12);
+      transform: translateY(-4px);
     }
+    .univ-card .eyebrow {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.25em; color: var(--muted);
+      margin-bottom: 1rem; display: block;
+    }
+    .univ-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 300;
+      color: var(--ink); margin-bottom: 0.8rem; line-height: 1.2;
+    }
+    .univ-card p {
+      font-size: 1rem; color: var(--muted);
+      line-height: 1.7; margin-bottom: 1.5rem;
+    }
+    .univ-card .card-link {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.15em; color: var(--gold);
+    }
+
+    /* VOCE & MEDIA — dark bg */
+    #voce { background: var(--dark-bg); }
+    #voce .section-header h2 { color: var(--parchment); }
+    #voce .section-header .eyebrow { color: var(--gold-light); }
+
+    .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .media-card {
+      background: var(--dark-card);
+      border: 1px solid rgba(201,169,110,0.2);
+      padding: 3rem 2.5rem; text-align: center;
+      text-decoration: none; display: block; transition: all 0.4s;
+    }
+    .media-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .media-card .media-icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; }
+    .media-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 300;
+      color: var(--parchment); margin-bottom: 0.8rem;
+    }
+    .media-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
+    .media-card .media-link { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.2em; color: var(--gold); }
 
     /* ADN FM */
-    #adnfm {
-      background: #140f0a;
-      border-top: 1px solid rgba(201,169,110,0.15);
-      border-bottom: 1px solid rgba(201,169,110,0.15);
-    }
-    .adnfm-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: center;
+    #adnfm { background: var(--cream); }
+    .adnfm-card {
+      background: white; border: 1px solid var(--sand);
+      border-top: 3px solid var(--amber);
+      padding: 3rem; max-width: 800px; margin: 0 auto;
+      text-align: center;
     }
     .adnfm-logo {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(3rem, 6vw, 5rem);
-      font-weight: 500; letter-spacing: 0.15em;
-      color: var(--gold); margin-bottom: 0.6rem;
+      font-family: 'Cinzel', serif; font-size: 3rem;
+      font-weight: 500; letter-spacing: 0.2em;
+      color: var(--gold); margin-bottom: 0.5rem;
     }
     .adnfm-tagline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; font-style: italic; font-weight: 300;
-      color: var(--sand); margin-bottom: 2rem;
+      font-size: 1.3rem; font-style: italic;
+      color: var(--muted); margin-bottom: 2rem;
     }
-    .adnfm-desc {
-      font-size: 1rem; color: #d0c0a0;
-      line-height: 1.78; margin-bottom: 1rem;
+    .adnfm-card p {
+      font-size: 1rem; color: var(--muted);
+      line-height: 1.78; margin-bottom: 1rem; text-align: left;
+    }
+    .adnfm-note {
+      margin-top: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem; font-style: italic;
+      color: var(--muted); border-top: 1px solid var(--sand);
+      padding-top: 1rem;
     }
     .adnfm-wave {
       display: flex; align-items: flex-end;
-      gap: 7px; height: 80px; justify-content: center;
-      margin-bottom: 2rem;
+      gap: 5px; height: 50px;
+      justify-content: center; margin: 1.5rem 0;
     }
     .wave-bar {
-      width: 10px; background: var(--gold); opacity: 0.35;
+      width: 8px; background: var(--gold); opacity: 0.5;
       border-radius: 2px 2px 0 0;
       animation: waveAnim 1.8s ease-in-out infinite;
     }
-    .wave-bar:nth-child(1)  { animation-delay: 0s; }
-    .wave-bar:nth-child(2)  { animation-delay: 0.15s; }
-    .wave-bar:nth-child(3)  { animation-delay: 0.3s; }
-    .wave-bar:nth-child(4)  { animation-delay: 0.45s; }
-    .wave-bar:nth-child(5)  { animation-delay: 0.6s; }
-    .wave-bar:nth-child(6)  { animation-delay: 0.75s; }
-    .wave-bar:nth-child(7)  { animation-delay: 0.6s; }
-    .wave-bar:nth-child(8)  { animation-delay: 0.45s; }
-    .wave-bar:nth-child(9)  { animation-delay: 0.3s; }
-    .wave-bar:nth-child(10) { animation-delay: 0.15s; }
+    .wave-bar:nth-child(1) { animation-delay: 0s; }
+    .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+    .wave-bar:nth-child(4) { animation-delay: 0.45s; }
+    .wave-bar:nth-child(5) { animation-delay: 0.6s; }
+    .wave-bar:nth-child(6) { animation-delay: 0.75s; }
+    .wave-bar:nth-child(7) { animation-delay: 0.6s; }
+    .wave-bar:nth-child(8) { animation-delay: 0.45s; }
     @keyframes waveAnim {
-      0%,100% { opacity: 0.2; transform: scaleY(0.5); }
-      50%      { opacity: 0.7; transform: scaleY(1); }
-    }
-    .adnfm-note {
-      text-align: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem; font-style: italic; color: var(--muted);
-    }
-    .adnfm-note span {
-      display: block; font-family: 'Cinzel', serif;
-      font-size: 0.58rem; letter-spacing: 0.25em;
-      color: rgba(240,192,96,0.6); margin-bottom: 0.4rem;
-      font-style: normal;
+      0%,100% { opacity: 0.25; transform: scaleY(0.5); }
+      50%      { opacity: 0.8; transform: scaleY(1); }
     }
 
     /* BLOGURI */
-    #bloguri { background: var(--dark-bg); }
-    .blog-list { display: flex; flex-direction: column; gap: 0; }
+    #bloguri { background: var(--parchment); }
+    .blog-list { max-width: 700px; margin: 0 auto; }
     .blog-item {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.8rem 0;
-      border-bottom: 1px solid rgba(201,169,110,0.12);
-      text-decoration: none; color: var(--parchment);
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--sand);
+      text-decoration: none; color: var(--ink);
       transition: all 0.3s;
     }
-    .blog-item:first-child { border-top: 1px solid rgba(201,169,110,0.12); }
-    .blog-item:hover { padding-left: 1rem; }
+    .blog-item:first-child { border-top: 1px solid var(--sand); }
+    .blog-item:hover { color: var(--amber); padding-left: 0.5rem; }
     .blog-platform {
       font-family: 'Cinzel', serif; font-size: 0.6rem;
-      letter-spacing: 0.2em; color: #c0b090;
-      min-width: 100px;
+      letter-spacing: 0.2em; color: var(--muted); min-width: 80px;
     }
     .blog-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; font-style: italic; font-weight: 300;
-      color: #ffffff; flex: 1; padding: 0 2rem;
-      transition: color 0.3s;
+      font-size: 1.3rem; font-style: italic; flex: 1; padding: 0 1.5rem;
     }
-    .blog-item:hover .blog-title { color: var(--gold-light); }
-    .blog-arrow {
-      font-family: 'Cinzel', serif; font-size: 0.6rem;
-      letter-spacing: 0.15em; color: #f0c060;
+    .blog-arrow { color: var(--gold); font-size: 1rem; }
+
+    /* SOCIAL */
+    #social { background: var(--dark-bg); }
+    #social .section-header h2 { color: var(--parchment); }
+    #social .section-header .eyebrow { color: var(--gold-light); }
+    .social-grid {
+      display: flex; flex-wrap: wrap;
+      gap: 1rem; justify-content: center;
     }
+    .social-link {
+      font-family: 'Cinzel', serif; font-size: 0.68rem;
+      letter-spacing: 0.15em; color: var(--gold);
+      text-decoration: none;
+      border: 1px solid rgba(201,169,110,0.4);
+      padding: 0.7rem 1.5rem; transition: all 0.3s;
+    }
+    .social-link:hover { background: var(--gold); color: var(--dark-bg); border-color: var(--gold); }
 
     /* CITAT */
     .quote-section {
-      padding: 7rem 2rem; text-align: center;
-      background: var(--dark-bg);
-      border-top: 1px solid rgba(201,169,110,0.12);
+      padding: 7rem 2rem; text-align: center; background: var(--cream);
+      border-top: 1px solid var(--sand);
     }
     .quote-mark {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 7rem; font-weight: 300;
-      color: rgba(201,169,110,0.1); line-height: 0.6;
-      margin-bottom: 2rem; display: block;
+      font-family: 'Cormorant Garamond', serif; font-size: 7rem;
+      font-weight: 300; color: rgba(201,169,110,0.2);
+      line-height: 0.6; margin-bottom: 2rem; display: block;
     }
     .quote-text {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-size: clamp(1.4rem, 3vw, 2rem);
       font-style: italic; font-weight: 300;
-      color: #ffffff; max-width: 720px;
+      color: var(--ink); max-width: 720px;
       margin: 0 auto 2rem; line-height: 1.6;
     }
     .quote-attr {
@@ -328,51 +325,24 @@
       letter-spacing: 0.3em; color: var(--muted);
     }
 
-    /* SOCIAL */
-    #social {
-      padding: 5rem 2rem;
-      background: var(--dark-bg);
-      border-top: 1px solid rgba(201,169,110,0.12);
-      text-align: center;
-    }
-    .social-links {
-      display: flex; gap: 1rem;
-      justify-content: center; flex-wrap: wrap;
-      margin-top: 3rem;
-    }
-    .social-link {
-      font-family: 'Cinzel', serif; font-size: 0.65rem;
-      letter-spacing: 0.15em; color: #1c1510;
-      text-decoration: none;
-      border: 1px solid #f0c060;
-      padding: 0.7rem 1.4rem; transition: all 0.3s;
-      background: #f0c060;
-    }
-    .social-link:hover { color: var(--gold); border-color: rgba(201,169,110,0.5); }
-
     /* FOOTER */
     footer {
-      background: var(--dark-bg);
-      border-top: 1px solid rgba(201,169,110,0.12);
+      background: var(--dark-bg); border-top: 1px solid rgba(201,169,110,0.15);
       padding: 3rem 2rem; text-align: center;
     }
     .footer-logo {
       font-family: 'Cinzel', serif; font-size: 0.85rem;
       letter-spacing: 0.2em; color: var(--gold); margin-bottom: 0.8rem;
     }
-    footer p { font-size: 0.8rem; color: #a09080; }
+    footer p { font-size: 0.8rem; color: var(--muted); }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-photo-wrap { min-height: 350px; }
-      .hero-photo-wrap::after {
-        background: linear-gradient(to bottom, transparent 60%, var(--dark-bg) 100%);
-      }
-      .hero-text { padding: 2rem; }
-      .universe-card { grid-template-columns: 60px 1fr; }
-      .universe-num { font-size: 2.5rem; padding: 0 1rem; }
-      .adnfm-grid { grid-template-columns: 1fr; gap: 2rem; }
+      #poet { grid-template-columns: 1fr; }
+      .poet-photo-wrap { min-height: 350px; }
+      .poet-photo-wrap::after { background: linear-gradient(to bottom, transparent 60%, var(--dark-bg) 100%); }
+      .poet-text { padding: 2rem; }
+      .univ-grid, .media-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -383,6 +353,7 @@
     <a href="#" class="nav-logo">A · C · B</a>
     <ul>
       <li><a href="#universuri">Universuri</a></li>
+      <li><a href="#voce">Voce & Radio</a></li>
       <li><a href="#adnfm">ADN FM</a></li>
       <li><a href="#social">Contact</a></li>
     </ul>
@@ -390,27 +361,21 @@
 </nav>
 
 <!-- HERO -->
-<section id="poet" class="hero">
-  <div class="hero-photo-wrap">
+<section id="poet">
+  <div class="poet-photo-wrap">
     <img src="foto-andrei.jpg" alt="Andrei Constantin Burdușa">
   </div>
-  <div class="hero-text">
+  <div class="poet-text">
     <span class="eyebrow">Timișoara · România</span>
     <h1>Andrei Constantin<br>Burdușa</h1>
     <div class="tagline">purtătorul de semne</div>
     <div class="divider-gold"></div>
-    <p>
-      Poet, analist, filosof și om de radio cu peste 30 de ani de experiență în televiziune și radio. Fondator Radio Vest (1995). Nouă volume de poezie publicate la Editura Mirton.
-    </p>
-    <p>
-      Scrie poezie, eseu filosofic și analiză geopolitică — trei universuri distincte, același semn.
-    </p>
-    <div class="facets">
-      <span class="facet">Poet</span>
-      <span class="facet">Analist</span>
-      <span class="facet">Filosof</span>
-      <span class="facet">Om de radio</span>
-      <span class="facet">9 volume</span>
+    <p>Poet, analist, filosof și om de radio cu peste 30 de ani de experiență în televiziune și radio. Fondator Radio Vest (1995). Nouă volume de poezie publicate la Editura Mirton.</p>
+    <p>Scrie poezie, eseu filosofic și analiză geopolitică — trei universuri distincte, același semn.</p>
+    <div class="poet-links">
+      <a href="https://andreiburdusa.site" target="_blank">andreiburdusa.site</a>
+      <a href="https://aequus.news" target="_blank">aequus.news</a>
+      <a href="https://mirelamares.art" target="_blank">mirelamares.art</a>
     </div>
   </div>
 </section>
@@ -419,119 +384,93 @@
 <section id="universuri">
   <div class="section-inner">
     <div class="section-header">
-      <span class="eyebrow">Universurile</span>
-      <h2>Tot ce poartă semnul</h2>
+      <span class="eyebrow">Tot ce poartă semnul</span>
+      <h2>Universurile</h2>
       <div class="line"></div>
     </div>
+    <div class="univ-grid">
 
-    <a href="https://andreiburdusa.site" target="_blank" class="universe-card">
-      <div class="universe-num">I</div>
-      <div class="universe-content">
-        <span class="universe-label">Poezie · Filosofie · Eseu</span>
-        <div class="universe-title">andreiburdusa.site</div>
-        <div class="universe-desc">
-          Nouă volume de poezie. Eseuri filosofice — seria „Lentilele și Entitatea". Jurnal de ființare. Haiku. Proză scurtă. Cel mai recent poem — întotdeauna primul.
-        </div>
-        <div class="universe-links">
-          <a href="https://andreiburdusa.site/ziua-frunza-poemul.html" target="_blank" class="universe-link">Cel mai recent poem</a>
-          <a href="https://andreiburdusa.site/eseuri.html" target="_blank" class="universe-link">Eseuri filosofice</a>
-          <a href="https://andreiburdusa.site/volumele-mele.html" target="_blank" class="universe-link">Volume publicate</a>
-        </div>
-      </div>
-    </a>
+      <a href="https://andreiburdusa.site" target="_blank" class="univ-card">
+        <span class="eyebrow">Poezie · Filosofie · Eseu</span>
+        <h3>andreiburdusa.site</h3>
+        <p>Nouă volume de poezie. Eseuri filosofice — seria „Lentilele și Entitatea". Jurnal de ființare. Haiku. Proză scurtă.</p>
+        <span class="card-link">Intră în univers →</span>
+      </a>
 
-    <a href="https://aequus.news" target="_blank" class="universe-card">
-      <div class="universe-num">II</div>
-      <div class="universe-content">
-        <span class="universe-label">Jurnalism · Geopolitică · Analiză</span>
-        <div class="universe-title">aequus.news</div>
-        <div class="universe-desc">
-          Analiză geopolitică și editoriale despre România, Iran-Hormuz, NATO, Rusia. Scris dur și rece — fără ironie, fără speculație nedocumentată. Noi știm mai mult decât scriem.
-        </div>
-        <div class="universe-links">
-          <a href="https://aequus.news/romania.html" target="_blank" class="universe-link">România</a>
-          <a href="https://aequus.news/global.html" target="_blank" class="universe-link">Global</a>
-          <a href="https://aequus.news/iran.html" target="_blank" class="universe-link">Iran</a>
-        </div>
-      </div>
-    </a>
+      <a href="https://aequus.news" target="_blank" class="univ-card">
+        <span class="eyebrow">Jurnalism · Geopolitică · Analiză</span>
+        <h3>aequus.news</h3>
+        <p>Analiză geopolitică și editoriale despre România, Iran, NATO, Rusia. Scris dur și rece — fără speculație nedocumentată.</p>
+        <span class="card-link">Citește analizele →</span>
+      </a>
 
-    <a href="https://mirelamares.art" target="_blank" class="universe-card">
-      <div class="universe-num">III</div>
-      <div class="universe-content">
-        <span class="universe-label">Lirică în doi autori</span>
-        <div class="universe-title">mirelamares.art — Doeme</div>
-        <div class="universe-desc">
-          Doeme — o formă lirică inventată împreună cu Violeta-Mirela Mareș. Doi autori, un singur poem. Nicio contribuție individuală nu poate fi identificată. O nouă ontologie a creației poetice.
-        </div>
-        <div class="universe-links">
-          <a href="https://mirelamares.art" target="_blank" class="universe-link">mirelamares.art</a>
-        </div>
-      </div>
-    </a>
+      <a href="https://mirelamares.art" target="_blank" class="univ-card">
+        <span class="eyebrow">Lirică în doi autori</span>
+        <h3>Doeme — mirelamares.art</h3>
+        <p>O formă lirică inventată împreună cu Violeta-Mirela Mareș. Doi autori, un singur poem. Nicio contribuție individuală nu poate fi identificată.</p>
+        <span class="card-link">Descoperă doemele →</span>
+      </a>
 
-    <a href="https://www.buzzsprout.com/1760769" target="_blank" class="universe-card">
-      <div class="universe-num">IV</div>
-      <div class="universe-content">
-        <span class="universe-label">Podcast · YouTube</span>
-        <div class="universe-title">Vocea</div>
-        <div class="universe-desc">
-          Poeme recitate — cuvântul scris devine cuvânt rostit, o a doua naștere a poemului. Producții video, lecturi publice și creații audiovizuale pe YouTube.
-        </div>
-        <div class="universe-links">
-          <a href="https://www.buzzsprout.com/1760769" target="_blank" class="universe-link">Podcast Buzzsprout</a>
-          <a href="https://www.youtube.com/@AndreiBurdusa" target="_blank" class="universe-link">YouTube</a>
-        </div>
+      <div class="univ-card" style="cursor:default; border-top-color: var(--amber);">
+        <span class="eyebrow">Consultanță · Media · Strategie</span>
+        <h3>True Com</h3>
+        <p>30 de ani de televiziune și radio. Fondator Radio Vest (1995). Consultanță media și strategie editorială.</p>
+        <a href="mailto:andrei@andreiburdusa.ro" class="card-link">andrei@andreiburdusa.ro →</a>
       </div>
-    </a>
 
-    <div class="universe-card" style="cursor:default;">
-      <div class="universe-num">V</div>
-      <div class="universe-content">
-        <span class="universe-label">Consultanță · Media · Strategie</span>
-        <div class="universe-title">True Com</div>
-        <div class="universe-desc">
-          30 de ani de televiziune și radio. Fondator Radio Vest (1995) — primul post de radio privat din Timișoara. Consultanță media și strategie editorială pentru organizații și proiecte media.
-        </div>
-        <div class="universe-links">
-          <a href="mailto:andrei@andreiburdusa.ro" class="universe-link">andrei@andreiburdusa.ro</a>
-        </div>
-      </div>
     </div>
+  </div>
+</section>
 
+<!-- VOCE & MEDIA -->
+<section id="voce">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="eyebrow">Podcast · YouTube</span>
+      <h2>Vocea</h2>
+      <div class="line"></div>
+    </div>
+    <div class="media-grid">
+      <a href="https://www.buzzsprout.com/1760769" target="_blank" class="media-card">
+        <span class="media-icon">🎙</span>
+        <h3>Podcast</h3>
+        <p>Poeme recitate — cuvântul scris devine cuvânt rostit. O a doua naștere a poemului.</p>
+        <span class="media-link">ASCULTĂ PE BUZZSPROUT →</span>
+      </a>
+      <a href="https://www.youtube.com/@AndreiBurdusa" target="_blank" class="media-card">
+        <span class="media-icon">▶</span>
+        <h3>YouTube</h3>
+        <p>Producții video, lecturi publice și creații audiovizuale.</p>
+        <span class="media-link">VEZI PE YOUTUBE →</span>
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- ADN FM -->
 <section id="adnfm">
   <div class="section-inner">
-    <div class="adnfm-grid">
-      <div>
-        <span class="eyebrow" style="text-align:left; display:block; margin-bottom:1.5rem;">În construcție</span>
-        <div class="adnfm-logo">ADN FM</div>
-        <div class="adnfm-tagline">Muzica ta. Mintea ta.</div>
-        <div class="divider-gold"></div>
-        <p class="adnfm-desc">Radio online care combină muzică de calitate din toate genurile cu intervenții de 30–35 de secunde între piese — comentariu neuroștiințific despre efectele muzicii asupra creierului.</p>
-        <p class="adnfm-desc">30 de emisiuni pe grila săptămânală. Bloc tematic prime time luni–vineri 19:00–20:00. Licență CNA în proces de obținere.</p>
+    <div class="section-header">
+      <span class="eyebrow">În construcție</span>
+      <h2>ADN FM</h2>
+      <div class="line"></div>
+    </div>
+    <div class="adnfm-card">
+      <div class="adnfm-logo">ADN FM</div>
+      <div class="adnfm-tagline">Muzica ta. Mintea ta.</div>
+      <div class="adnfm-wave">
+        <div class="wave-bar" style="height:40%"></div>
+        <div class="wave-bar" style="height:70%"></div>
+        <div class="wave-bar" style="height:55%"></div>
+        <div class="wave-bar" style="height:90%"></div>
+        <div class="wave-bar" style="height:60%"></div>
+        <div class="wave-bar" style="height:100%"></div>
+        <div class="wave-bar" style="height:75%"></div>
+        <div class="wave-bar" style="height:45%"></div>
       </div>
-      <div style="text-align:center;">
-        <div class="adnfm-wave">
-          <div class="wave-bar" style="height:40%"></div>
-          <div class="wave-bar" style="height:70%"></div>
-          <div class="wave-bar" style="height:55%"></div>
-          <div class="wave-bar" style="height:90%"></div>
-          <div class="wave-bar" style="height:60%"></div>
-          <div class="wave-bar" style="height:100%"></div>
-          <div class="wave-bar" style="height:75%"></div>
-          <div class="wave-bar" style="height:45%"></div>
-          <div class="wave-bar" style="height:80%"></div>
-          <div class="wave-bar" style="height:55%"></div>
-        </div>
-        <div class="adnfm-note">
-          <span>Demo playlist deschide cu</span>
-          Led Zeppelin — Over the Hills and Far Away
-        </div>
-      </div>
+      <p>Radio online care combină muzică de calitate din toate genurile cu intervenții de 30–35 de secunde între piese — comentariu neuroștiințific despre efectele muzicii asupra creierului. Un proiect unic în spațiul media românesc.</p>
+      <p>30 de emisiuni pe grila săptămânală. Bloc tematic prime time luni–vineri 19:00–20:00. Licență CNA în proces de obținere.</p>
+      <div class="adnfm-note">Demo playlist deschide cu: Led Zeppelin — Over the Hills and Far Away</div>
     </div>
   </div>
 </section>
@@ -579,7 +518,7 @@
       <h2>Contact & Social</h2>
       <div class="line"></div>
     </div>
-    <div class="social-links">
+    <div class="social-grid">
       <a href="https://www.facebook.com/andrei.burdusa" target="_blank" class="social-link">Facebook</a>
       <a href="https://www.instagram.com/andreiburdusa" target="_blank" class="social-link">Instagram</a>
       <a href="https://www.linkedin.com/in/andreiburdusa" target="_blank" class="social-link">LinkedIn</a>
