@@ -192,6 +192,52 @@
 
     /* VOCE & MEDIA — dark bg */
     #voce { background: var(--dark-bg); }
+
+    /* NOTE DE ZI */
+    #note { background: var(--ink); }
+    #note .section-header h2 { color: var(--parchment); }
+    #note .section-header .eyebrow { color: var(--gold-light); }
+    .note-grid { display: grid; gap: 2rem; max-width: 860px; margin: 0 auto; }
+    .note-card {
+      background: #0f0f14;
+      border: 0.5px solid #1e1e2a;
+      border-top: 2px solid var(--gold);
+      padding: 2rem 2.5rem;
+      position: relative;
+    }
+    .note-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .note-text {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--parchment);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+    .note-sub {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .note-tag {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      border: 0.5px solid var(--gold);
+      padding: 2px 8px;
+      margin-top: 1rem;
+    }
+
     #voce .section-header h2 { color: var(--parchment); }
     #voce .section-header .eyebrow { color: var(--gold-light); }
 
@@ -353,6 +399,7 @@
     <a href="#" class="nav-logo">A · C · B</a>
     <ul>
       <li><a href="#universuri">Universuri</a></li>
+      <li><a href="#note">Note de zi</a></li>
       <li><a href="#voce">Voce & Radio</a></li>
       <li><a href="#adnfm">ADN FM</a></li>
       <li><a href="#social">Contact</a></li>
@@ -416,6 +463,35 @@
         <h3>True Com</h3>
         <p>30 de ani de televiziune și radio. Fondator Radio Vest (1995). Consultanță media și strategie editorială.</p>
         <a href="mailto:andrei@andreiburdusa.ro" class="card-link">andrei@andreiburdusa.ro →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- NOTE DE ZI -->
+<section id="note">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="eyebrow">Observații · Fragmente · Gânduri</span>
+      <h2>Note de zi</h2>
+      <div class="line"></div>
+    </div>
+    <div class="note-grid">
+
+      <div class="note-card">
+        <span class="note-date">13 MAI 2026</span>
+        <div class="note-text">
+          „Paradoxul românesc: cum poți să fii și tâmpit și genial în aceeași zi."
+        </div>
+        <div class="note-sub">
+          În aceeași zi: cerere de suspendare a președintelui, summit B9 găzduit fără capacitate diplomatică reală, Bolojenism ca prim reflex colectiv anti-Mioriță în 35 de ani.<br><br>
+          Și Metallica la Piața Obor — mici 2,5 lei, bere la pahar de plastic, James Hetfield cu tricou Metallica la propriul concert. Autentici. Fără PR. Fără restaurant cu stele Michelin.<br><br>
+          România a câștigat ceva azi fără să facă nimic special. Doar a fost ea însăși.<br><br>
+          Geniul și tâmpenia nu sunt la români în conflict. Coexistă confortabil, adesea în același om, în aceeași zi, uneori în același gest.
+        </div>
+        <span class="note-tag">BUCUREȘTI · ROMÂNIA</span>
       </div>
 
     </div>
