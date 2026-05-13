@@ -227,6 +227,11 @@
       color: var(--muted);
       line-height: 1.7;
     }
+
+    .note-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 1.2rem 0; }
+    .note-gallery img { width: 100%; height: 220px; object-fit: cover; filter: brightness(0.9); }
+    @media (max-width: 600px) { .note-gallery { grid-template-columns: 1fr; } }
+
     .note-tag {
       display: inline-block;
       font-family: 'Cinzel', serif;
@@ -484,6 +489,10 @@
         <span class="note-date">13 MAI 2026</span>
         <div class="note-text">
           „Paradoxul românesc: cum poți să fii și tâmpit și genial în aceeași zi."
+        </div>
+        <div class="note-gallery">
+          <img src="metallica-obor-1.jpg" alt="Metallica la Terasa Obor, București">
+          <img src="metallica-obor-2.jpg" alt="Metallica cu mici la Piața Obor">
         </div>
         <div class="note-sub">
           În aceeași zi: cerere de suspendare a președintelui, summit B9 găzduit fără capacitate diplomatică reală, Bolojenism ca prim reflex colectiv anti-Mioriță în 35 de ani.<br><br>
