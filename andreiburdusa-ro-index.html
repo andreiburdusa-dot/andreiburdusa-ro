@@ -192,6 +192,57 @@
 
     /* VOCE & MEDIA — dark bg */
     #voce { background: var(--dark-bg); }
+
+    /* NOTE DE ZI */
+    #note { background: var(--ink); }
+    #note .section-header h2 { color: var(--parchment); }
+    #note .section-header .eyebrow { color: var(--gold-light); }
+    .note-grid { display: grid; gap: 2rem; max-width: 860px; margin: 0 auto; }
+    .note-card {
+      background: #0f0f14;
+      border: 0.5px solid #1e1e2a;
+      border-top: 2px solid var(--gold);
+      padding: 2rem 2.5rem;
+      position: relative;
+    }
+    .note-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .note-text {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--parchment);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+    .note-sub {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .note-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 1.2rem 0; }
+    .note-gallery img { width: 100%; height: 220px; object-fit: cover; filter: brightness(0.9); }
+    @media (max-width: 600px) { .note-gallery { grid-template-columns: 1fr; } }
+
+    .note-tag {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      border: 0.5px solid var(--gold);
+      padding: 2px 8px;
+      margin-top: 1rem;
+    }
+
     #voce .section-header h2 { color: var(--parchment); }
     #voce .section-header .eyebrow { color: var(--gold-light); }
 
@@ -336,6 +387,13 @@
     }
     footer p { font-size: 0.8rem; color: var(--muted); }
 
+@media (max-width: 900px) {
+      #feeds-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media (max-width: 768px) {
+      #feeds-grid { grid-template-columns: 1fr !important; }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       #poet { grid-template-columns: 1fr; }
@@ -352,7 +410,9 @@
   <div class="nav-inner">
     <a href="#" class="nav-logo">A · C · B</a>
     <ul>
+      <li><a href="#cenou">Ce e nou</a></li>
       <li><a href="#universuri">Universuri</a></li>
+      <li><a href="#note">Note de zi</a></li>
       <li><a href="#voce">Voce & Radio</a></li>
       <li><a href="#adnfm">ADN FM</a></li>
       <li><a href="#social">Contact</a></li>
@@ -370,6 +430,11 @@
     <h1>Andrei Constantin<br>Burdușa</h1>
     <div class="tagline">purtătorul de semne</div>
     <div class="divider-gold"></div>
+    <p style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; font-weight:300; color:rgba(201,169,110,0.8); line-height:1.8; margin-bottom:0.4rem;">
+      Să te întorci când tremură o frunză<br>
+      să șchiopătezi când a murit o floare...
+    </p>
+    <a href="https://andreiburdusa.site/testament.html" target="_blank" style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:rgba(201,169,110,0.5); text-decoration:none; display:inline-block; margin-bottom:1.2rem; border-bottom:0.5px solid rgba(201,169,110,0.3); padding-bottom:2px;" onmouseover="this.style.color='rgba(201,169,110,0.9)'" onmouseout="this.style.color='rgba(201,169,110,0.5)'">ÎN LOC DE TESTAMENT →</a>
     <p>Poet, analist, filosof și om de radio cu peste 30 de ani de experiență în televiziune și radio. Fondator Radio Vest (1995). Nouă volume de poezie publicate la Editura Mirton.</p>
     <p>Scrie poezie, eseu filosofic și analiză geopolitică — trei universuri distincte, același semn.</p>
     <div class="poet-links">
@@ -379,6 +444,99 @@
     </div>
   </div>
 </section>
+
+<!-- CE E NOU -->
+<section id="cenou" style="background: var(--dark-bg); padding: 5rem 2rem;">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="eyebrow" style="color: var(--gold-light);">Ultimele apariții</span>
+      <h2 style="color: var(--parchment);">Ce e nou</h2>
+      <div class="line"></div>
+    </div>
+
+    <div id="feeds-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2rem;">
+
+      <!-- Aequus.news -->
+      <div class="feed-col">
+        <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:var(--gold); margin-bottom:1.2rem; padding-bottom:0.8rem; border-bottom:1px solid rgba(201,169,110,0.2);">AEQUUS.NEWS</div>
+        <div id="feed-aequus"><div style="color:var(--muted); font-size:0.9rem;">Se încarcă...</div></div>
+        <a href="https://aequus.news" target="_blank" style="display:inline-block; margin-top:1.2rem; font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.15em; color:var(--gold); text-decoration:none; border-bottom:0.5px solid rgba(201,169,110,0.3);">TOATE ARTICOLELE →</a>
+      </div>
+
+      <!-- andreiburdusa.site -->
+      <div class="feed-col">
+        <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:var(--gold); margin-bottom:1.2rem; padding-bottom:0.8rem; border-bottom:1px solid rgba(201,169,110,0.2);">ANDREIBURDUSA.SITE</div>
+        <div id="feed-site"><div style="color:var(--muted); font-size:0.9rem;">Se încarcă...</div></div>
+        <a href="https://andreiburdusa.site" target="_blank" style="display:inline-block; margin-top:1.2rem; font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.15em; color:var(--gold); text-decoration:none; border-bottom:0.5px solid rgba(201,169,110,0.3);">POEZIE & ESEU →</a>
+      </div>
+
+      <!-- mirelamares.art -->
+      <div class="feed-col">
+        <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:var(--gold); margin-bottom:1.2rem; padding-bottom:0.8rem; border-bottom:1px solid rgba(201,169,110,0.2);">MIRELAMARES.ART</div>
+        <div id="feed-mirela"><div style="color:var(--muted); font-size:0.9rem;">Se încarcă...</div></div>
+        <a href="https://mirelamares.art" target="_blank" style="display:inline-block; margin-top:1.2rem; font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.15em; color:var(--gold); text-decoration:none; border-bottom:0.5px solid rgba(201,169,110,0.3);">DOEME →</a>
+      </div>
+
+      <!-- Podcast Buzzsprout -->
+      <div class="feed-col">
+        <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:var(--gold); margin-bottom:1.2rem; padding-bottom:0.8rem; border-bottom:1px solid rgba(201,169,110,0.2);">PODCAST</div>
+        <div id="feed-podcast"><div style="color:var(--muted); font-size:0.9rem;">Se încarcă...</div></div>
+        <a href="https://www.buzzsprout.com/1760769" target="_blank" style="display:inline-block; margin-top:1.2rem; font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.15em; color:var(--gold); text-decoration:none; border-bottom:0.5px solid rgba(201,169,110,0.3);">TOATE EPISOADELE →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+// Feed loader — citește RSS prin proxy CORS și afișează ultimele 3 intrări
+async function loadFeed(url, containerId) {
+  const container = document.getElementById(containerId);
+  try {
+    const proxy = 'https://api.allorigins.win/get?url=' + encodeURIComponent(url);
+    const res = await fetch(proxy);
+    const data = await res.json();
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(data.contents, 'text/xml');
+    const items = Array.from(xml.querySelectorAll('item')).slice(0, 3);
+
+    if (!items.length) {
+      container.innerHTML = '<div style="color:var(--muted); font-size:0.9rem; font-style:italic;">Nimic recent.</div>';
+      return;
+    }
+
+    container.innerHTML = items.map(item => {
+      const title = item.querySelector('title')?.textContent || '';
+      const link = item.querySelector('link')?.textContent || '#';
+      const pubDate = item.querySelector('pubDate')?.textContent || '';
+      const date = pubDate ? new Date(pubDate).toLocaleDateString('ro-RO', {day:'numeric', month:'long', year:'numeric'}) : '';
+      return `
+        <div style="margin-bottom:1.4rem; padding-bottom:1.4rem; border-bottom:0.5px solid rgba(201,169,110,0.1);">
+          <a href="${link}" target="_blank" style="
+            font-family:'Cormorant Garamond',serif;
+            font-size:1.05rem;
+            font-weight:400;
+            color:var(--parchment);
+            text-decoration:none;
+            line-height:1.4;
+            display:block;
+            margin-bottom:0.3rem;
+            transition: color 0.2s;
+          " onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--parchment)'">${title}</a>
+          ${date ? `<span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.15em; color:var(--muted);">${date}</span>` : ''}
+        </div>`;
+    }).join('');
+  } catch(e) {
+    container.innerHTML = '<div style="color:var(--muted); font-size:0.85rem; font-style:italic;">Feed indisponibil momentan.</div>';
+  }
+}
+
+// Încarcă feedurile
+loadFeed('https://aequus.news/feed.xml', 'feed-aequus');
+loadFeed('https://andreiburdusa.site/feed.xml', 'feed-site');
+loadFeed('https://mirelamares.art/feed.xml', 'feed-mirela');
+loadFeed('https://feeds.buzzsprout.com/1760769.rss', 'feed-podcast');
+</script>
 
 <!-- UNIVERSURI -->
 <section id="universuri">
@@ -416,6 +574,39 @@
         <h3>True Com</h3>
         <p>30 de ani de televiziune și radio. Fondator Radio Vest (1995). Consultanță media și strategie editorială.</p>
         <a href="mailto:andrei@andreiburdusa.ro" class="card-link">andrei@andreiburdusa.ro →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- NOTE DE ZI -->
+<section id="note">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="eyebrow">Observații · Fragmente · Gânduri</span>
+      <h2>Note de zi</h2>
+      <div class="line"></div>
+    </div>
+    <div class="note-grid">
+
+      <div class="note-card">
+        <span class="note-date">13 MAI 2026</span>
+        <div class="note-text">
+          „Paradoxul românesc: cum poți să fii și tâmpit și genial în aceeași zi."
+        </div>
+        <div class="note-gallery">
+          <img src="metallica-obor-1.jpg" alt="Metallica la Terasa Obor, București">
+          <img src="metallica-obor-2.jpg" alt="Metallica cu mici la Piața Obor">
+        </div>
+        <div class="note-sub">
+          În aceeași zi: cerere de suspendare a președintelui, summit B9 găzduit fără capacitate diplomatică reală, Bolojenism ca prim reflex colectiv anti-Mioriță în 35 de ani.<br><br>
+          Și Metallica la Piața Obor — mici 2,5 lei, bere la pahar de plastic, James Hetfield cu tricou Metallica la propriul concert. Autentici. Fără PR. Fără restaurant cu stele Michelin.<br><br>
+          România a câștigat ceva azi fără să facă nimic special. Doar a fost ea însăși.<br><br>
+          Geniul și tâmpenia nu sunt la români în conflict. Coexistă confortabil, adesea în același om, în aceeași zi, uneori în același gest.
+        </div>
+        <span class="note-tag">BUCUREȘTI · ROMÂNIA</span>
       </div>
 
     </div>
